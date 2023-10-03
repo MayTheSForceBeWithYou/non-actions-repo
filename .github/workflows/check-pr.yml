@@ -1,0 +1,26 @@
+name: Check Pull Request
+run-name: Check Pull Request
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+jobs:
+  print-github-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub Context
+        run: |
+          if [ "${{ github }}" != '' ]; then
+            echo "github is populated"
+            echo "${{ toJson(github) }}"
+          else
+            echo "github is NOT populated"
+          fi
+  
+  # call-callable-validate:
+  #   uses: MayTheSForceBeWithYou/actions-repo/.github/workflows/callable-validate-to-sf.yml@main
+  #   with:
+      
