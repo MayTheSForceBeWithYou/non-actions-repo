@@ -1,3 +1,6 @@
+/**
+ * @author MayTheSForceBeWithYou
+ */
 public inherited sharing class ApexLegends {
     public class Character {
         public String name {get; set;}
